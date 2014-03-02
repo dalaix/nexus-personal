@@ -2,21 +2,30 @@
 
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
+# Always exclude cvs subersion and git files.
 export DH_ALWAYS_EXCLUDE=CVS:.svn:.git
+# Need that to build on lauchpad.
 export NO_PKG_MANGLE=1
 
 %:
 	dh $@ 
 
-NO_PKG_MANGLE=1
+
+# 
+export INSTALL_DIR=/usr/local/lib
+override_dh_fixperms:
+	dh_fixperms
+	chmod 4755 ${INSTALL_DIR}/personal/persadm
+	chmod 4755 ${INSTALL_DIR}/personal/persadm.sh
+	chmod 4755 ${INSTALL_DIR}/personal/personal.bin
+	chmod 4755 ${INSTALL_DIR}/personal/personal.sh
 
 override_dh_usrlocal:
 	echo "skip the usr/local complain"
 
-override_dh_shlibdeps:
-	echo "skip the calculate shared library dependencies"
+#override_dh_shlibdeps:
+#	echo "skip the calculate shared library dependencies"
 
-override_dh_builddeb:
-	dh_builddeb -a
-
+#override_dh_builddeb:
+#	dh_builddeb -a
 

@@ -21,8 +21,8 @@ set -e
 
 case "$1" in
     purge|remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
-	if [ -f /etc/ld.so.conf.d/nexus-personal ]; then
-		rm /etc/ld.so.conf.d/nexus-personal
+	if [ -f /etc/ld.so.conf.d/nexus-personal.conf ]; then
+		rm /etc/ld.so.conf.d/nexus-personal.conf
 	fi
     ;;
 

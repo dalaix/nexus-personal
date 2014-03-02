@@ -21,13 +21,13 @@ set -e
 case "$1" in
     configure)
 	INSTALL_DIR="/usr/local/lib"
-	chmod 755 $INSTALL_DIR/personal/persadm
-	chmod 755 $INSTALL_DIR/personal/persadm.sh
-	chmod 755 $INSTALL_DIR/personal/personal.bin
-	chmod 755 $INSTALL_DIR/personal/personal.sh
+#	chmod 755 $INSTALL_DIR/personal/persadm
+#	chmod 755 $INSTALL_DIR/personal/persadm.sh
+#	chmod 755 $INSTALL_DIR/personal/personal.bin
+#	chmod 755 $INSTALL_DIR/personal/personal.sh
 	grep -q $INSTALL_DIR /etc/ld.so.conf.d/*
 	if [ $? -ne 0 ]; then
-		echo $INSTALL_DIR > /etc/ld.so.conf.d/nexus-personal
+		echo $INSTALL_DIR > /etc/ld.so.conf.d/nexus-personal.conf
 	fi
     ;;
 

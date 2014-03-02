@@ -1,9 +1,8 @@
 nexus-personal for Debian
 -------------------------
 
-<this file describes information about the source package, see Debian policy
-manual section 4.14. You WILL either need to modify or delete this file>
+The source was downloaded from https://install.bankid.com with the following  command :
+wget --no-check-certificate --content-disposition https://install.bankid.com/Download?defaultFileId=Linux
 
-
-
+You should get an archive like : BISP-*.tar.gz
 

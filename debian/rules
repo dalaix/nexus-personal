@@ -39,6 +39,9 @@ get-source-version:
 extract-orig-source:
 	tar -xvzf ../BISP-*.tar.gz
 
+create-orig-source:
+	cp ../BISP-*.tar.gz  ../nexus-personal_$(shell ls ../BISP-*.tar.gz  |  grep -o '[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*').orig.tar.gz
+
 #PKD  = $(abspath $(dir $(MAKEFILE_LIST)))
 #PKG  = $(word 2,$(shell dpkg-parsechangelog -l$(PKD)/changelog | grep ^Source))
 #VER ?= $(shell dpkg-parsechangelog -l$(PKD)/changelog | perl -ne 'print $$1 if m{^Version:\s+(?:\d+:)?(\d.*)(?:\-\d+.*)};')

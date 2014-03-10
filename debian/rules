@@ -52,3 +52,4 @@ create-orig-source:
 #	@echo "# Downloading..."
 #	uscan --noconf --verbose --rename --destdir=$(CURDIR) --check-dirname-level=0 --force-download --download-version $(VER) $(PKD)
 
+#  curl -s -D - https://install.bankid.com/Download?defaultFileId=Linux | egrep "^Location:" | sed "s/Location: \(.*\)/https:\/\/install.bankid.com\\1/"
